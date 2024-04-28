@@ -1,10 +1,11 @@
 import styles from './home.module.scss'
+import { Header } from '@/components/Header'
 
 const HomePage = () => (
   <div className={styles.container}>
-    <header>
-      <div className={styles.header_content}>header valorant</div>
-    </header>
+
+      <Header/>
+
     <main>main</main>
   </div>
 )
