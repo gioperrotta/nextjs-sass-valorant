@@ -1,6 +1,6 @@
 import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
-import styles from './header.module.scss'
+import styles from './style.module.scss'
 
 export function Header() {
   return (
