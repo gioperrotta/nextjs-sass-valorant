@@ -1,3 +1,4 @@
+import { Main } from '@/components/Main'
 import styles from './home.module.scss'
 import { Header } from '@/components/Header'
 
@@ -6,7 +7,7 @@ const HomePage = () => (
 
       <Header/>
 
-    <main>main</main>
+      <Main/>
   </div>
 )
 
