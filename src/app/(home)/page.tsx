@@ -1,5 +1,5 @@
 import { Main } from '@/components/Main'
-import styles from './home.module.scss'
+import styles from './style.module.scss'
 import { Header } from '@/components/Header'
 
 const HomePage = () => (

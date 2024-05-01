@@ -3,37 +3,98 @@
   flex-direction: column;
   justify-content: space-between;
 
-  background: pink;
+  // background: pink;
   width: 300px;
   height: 600px;
 
+  position: relative;
 
-  > div {
-    font-family: 'Druk';
+  filter: grayscale(1);
 
-    p {
-      color: var(--red);
-      font-weight: normal;
-      letter-spacing: 1px;
-    }
-    strong {
-      font-size: 2.5rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: bold;
+  &:hover {
+    filter: grayscale(0);
+    transition: all 0.4s;
 
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(255,255,255,0.8);
-
+    .text {
+      opacity: 1;
     }
 
+    .background {
+      background: var(--black);
+      span {
+        background-size: 340%;
+        transition: all 0.4s;
+      }
+    }
   }
 
-  ul {
-    align-self: flex-end;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    column-gap: 1.25rem;
+  .text, .abilities {
+    z-index: 2;
+  }
+}
+
+.text {
+  font-family: 'Druk';
+
+  margin-top: 2.75rem;
+  margin-left: -0.75rem;
+  align-self: flex-start;
+  writing-mode: vertical-rl;
+
+  opacity: 0.5;
+  transition: all 0.4s;
+
+
+  p {
+    color: var(--red);
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+
+  strong {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255,255,255,0.8);
+  }
+}
+
+.abilities {
+  align-self: flex-end;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--white);
+  background: var(--black);
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: var(--black-opacity);
+  border-radius: 10px;
+  overflow: hidden;
+
+  transition: all 0.4s;
+
+  width: 90%;
+  height: 90%;
+  margin: auto;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 290%;
+    background-position: 45% 35%;
+    transition: all 0.4s;
   }
 }
