@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image'
 import styles from './style.module.scss'
 
 import { agent } from '@/data/agentes'
 import { Agent } from '../Agent'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 export const Main = () => (
   <main className={styles.container}>
@@ -17,13 +21,34 @@ export const Main = () => (
       <h1>AGENTES</h1>
 
     </div>
-    <div className={styles.agents}>
-      <Agent agent={agent}/>
-      <Agent agent={agent}/>
-      <Agent agent={agent}/>
-      <Agent agent={agent}/>
-
-
-    </div>
+    <Swiper className={styles.agents} spaceBetween={16} slidesPerView={4}>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Agent agent={agent} />
+      </SwiperSlide>
+    </Swiper>
   </main>
 )
