@@ -11,7 +11,7 @@ export const CardAgent = (agent: Agent) => (
     </div>
 
     <ul className={styles.abilities}>
-      {agent?.abilities?.map(ability => (
+      {agent?.abilities?.map(ability => ability.displayIcon && (
         <li key={ability.displayName}>
           <Image
             src={ability.displayIcon}
