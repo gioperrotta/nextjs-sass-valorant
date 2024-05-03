@@ -2,26 +2,26 @@
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import styles from './style.module.scss'
-
-import { CardAgent } from '@/components/CardAgent'
 
 import { Agent } from '@/types/agent.type'
+import { CardAgent } from '@/components/CardAgent'
+import { loadAgents } from '@/services/loadAgents'
+
+import styles from './style.module.scss'
 
 // import { agent } from '@/data/agentes'
 
 export const Agents = () => {
   const [agents, setAgents] = useState<Agent[]>([])
-  const loadAgents = async () => {
-    const url = 'https://valorant-api.com/v1/agents?language=pt-BR'
-    const response = await fetch(url).then(data => data.json())
-    const data = response.data as Agent[]
-    setAgents(data.filter(agent => agent.fullPortrait))
 
+  const loadData = async () => {
+    const data = await loadAgents()
+    setAgents(data)
   }
 
+
   useEffect(() => {
-    loadAgents()
+    loadData()
   }, [])
 
 
